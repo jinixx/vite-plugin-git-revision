@@ -1,31 +1,30 @@
-# vite-plugin-pages
+# @jinixx/vite-plugin-git-revision
 
-[![npm version](https://badgen.net/npm/v/vite-plugin-git-revision)](https://www.npmjs.com/package/vite-plugin-git-revision)
-[![monthly downloads](https://badgen.net/npm/dm/vite-plugin-git-revision)](https://www.npmjs.com/package/vite-plugin-git-revision)
+[![npm version](https://badgen.net/npm/v/@jinixx/vite-plugin-git-revision)](https://www.npmjs.com/package/@jinixx/vite-plugin-git-revision)
+[![monthly downloads](https://badgen.net/npm/dm/@jinixx/vite-plugin-git-revision)](https://www.npmjs.com/package/@jinixx/vite-plugin-git-revision)
 
-> Git version info for Vue 3 applications using [Vite](https://github.com/vitejs/vite)
+> Git version info for applications using [Vite](https://github.com/vitejs/vite)
 
 ## Getting Started
 
 Install:
 
 ```bash
-$ npm install -D vite-plugin-git-revision
+npm install -D vite-plugin-git-revision
 ```
 
 Add to your `vite.config.js`:
 
 ```js
-import Vue from '@vitejs/plugin-vue';
 import GitRevision from 'vite-plugin-git-revision';
 
 export default {
   plugins: [
-    Vue(), 
     GitRevision()
   ],
 };
 ```
+
 ## Configuration
 
 To use custom configuration, pass your options to Pages when instantiating the plugin:
@@ -84,4 +83,4 @@ change the default git command used to read the value of BRANCH.
 
 ## License
 
-MIT License © 2021 [qduld](https://github.com/qduld)
+MIT
