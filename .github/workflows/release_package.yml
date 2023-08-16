@@ -40,6 +40,6 @@ jobs:
       - name: Publish
         run: |
           npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
-          npm publish --ignore-scripts --verbose --access public --tag ${{ env.RELEASE_VERSION }}
+          npm publish --ignore-scripts --verbose --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
