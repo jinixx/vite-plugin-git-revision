@@ -1,0 +1,45 @@
+name: Release package
+on:
+  workflow_dispatch:
+
+  push:
+    tags:
+      - "v*.*.*"
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout project repository
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set RELEASE_VERSION env var
+        run: echo "RELEASE_VERSION=`echo $(git describe --tags --abbrev=0)`" >> $GITHUB_ENV
+
+      # Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      # Tests
+      #- name: Run tests
+      #  run: yarn test
+
+      # Build
+      - name: Build
+        run: npm run build
+
+      # Publish version to public repository
+      - name: Publish
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
+          npm publish --ignore-scripts --verbose --access public --tag ${{ env.RELEASE_VERSION }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
