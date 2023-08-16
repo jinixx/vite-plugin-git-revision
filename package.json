@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-git-revision",
+  "name": "@jinixx/vite-plugin-git-revision",
   "version": "0.1.9",
   "description": "Vite plugin that generates VERSION and COMMITHASH files during build based on a local git repository.",
   "type": "module",
@@ -26,18 +26,24 @@
   ],
   "keywords": [
     "vite",
-    "vue2"
+    "plugin",
+    "git",
+    "version",
+    "tag",
+    "commithash",
+    "commit",
+    "hash"
   ],
-  "author": "qduld",
+  "author": "Jin <jin@wenj.in>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qduld/vite-plugin-git-revision.git"
+    "url": "git+https://github.com/jinixx/vite-plugin-git-revision.git"
   },
   "bugs": {
-    "url": "https://github.com/qduld/vite-plugin-git-revision/issues"
+    "url": "https://github.com/jinixx/vite-plugin-git-revision/issues"
   },
-  "homepage": "https://github.com/qduld/vite-plugin-git-revision/tree/master/#readme",
+  "homepage": "https://github.com/jinixx/vite-plugin-git-revision#readme",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
