@@ -29,10 +29,11 @@ export interface ViteGitRevisionPlugin {
 }
 
 export default function GitRevision(options: ViteGitRevisionPlugin): Plugin {
-  options = Object.assign(defaultOpt, options ? options : {});
   if (options.versionCommand && options.lightweightTags) {
     throw new Error("lightweightTags can't be used together versionCommand");
   }
+
+  options = Object.assign(defaultOpt, options ? options : {});
 
   return {
     name: "vite:git-revision",

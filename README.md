@@ -38,11 +38,14 @@ import GitRevision from 'vite-plugin-git-revision';
 export default {
   plugins: [
     GitRevision({
-      lightweightTags:false,
-      branch:false,
-      versionCommand:'describe --tags --long --dirty --always',
-      commithashCommand:'',
-      branchCommand:'',
+      lightweightTags: false,
+      branch: false,
+      // default versionCommand was `describe --always`
+      versionCommand: 'describe --tags --long --dirty --always',
+      // default, remove prop if not needed, do not set to empty
+      commithashCommand: 'rev-parse HEAD',
+      // default, remove prop if not needed, do not set to empty
+      branchCommand: 'rev-parse --abbrev-ref HEAD'
     }),
   ],
 };
