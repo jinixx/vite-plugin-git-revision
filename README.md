@@ -4,13 +4,15 @@
 [![monthly downloads](https://badgen.net/npm/dm/@jinixx/vite-plugin-git-revision)](https://www.npmjs.com/package/@jinixx/vite-plugin-git-revision)
 
 > Git version info for applications using [Vite](https://github.com/vitejs/vite)
+>
+> Forked from https://github.com/qduld/vite-plugin-git-revision to fix a few issues.
 
 ## Getting Started
 
 Install:
 
 ```bash
-npm install -D vite-plugin-git-revision
+npm install -D @jinixx/vite-plugin-git-revision
 ```
 
 Add to your `vite.config.js`:
