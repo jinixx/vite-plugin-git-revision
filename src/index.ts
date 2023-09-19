@@ -4,6 +4,8 @@ import { runGitCommand } from "./helpers/run-git-command";
 const COMMITHASH_COMMAND = "rev-parse HEAD";
 const VERSION_COMMAND = "describe --always";
 const BRANCH_COMMAND = "rev-parse --abbrev-ref HEAD";
+const DATETIME_COMMAND =
+  "log -1 --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%ad'";
 
 const defaultOpt = {
   lightweightTags: false,
@@ -11,6 +13,7 @@ const defaultOpt = {
   commithashCommand: COMMITHASH_COMMAND,
   versionCommand: VERSION_COMMAND,
   branchCommand: BRANCH_COMMAND,
+  datetimeCommand: DATETIME_COMMAND,
 };
 
 export interface ViteGitRevisionPlugin {
@@ -22,6 +25,8 @@ export interface ViteGitRevisionPlugin {
   branch?: boolean;
   //change the default git command used to read the value of COMMITHASH
   commithashCommand?: string;
+  // change the default git command used to read the DATE and TIME of the commit
+  datetimeCommand?: string;
   //change the default git command used to read the value of VERSION
   versionCommand?: string;
   //change the default git command used to read the value of BRANCH
@@ -34,7 +39,6 @@ export default function GitRevision(options: ViteGitRevisionPlugin): Plugin {
   }
 
   options = Object.assign(defaultOpt, options ? options : {});
-
   return {
     name: "vite:git-revision",
     config(config: any) {
@@ -44,6 +48,9 @@ export default function GitRevision(options: ViteGitRevisionPlugin): Plugin {
         ...define,
         GITVERSION: JSON.stringify(
           runGitCommand(options.gitWorkTree, options.versionCommand)
+        ),
+        GITCOMMITDATETIME: JSON.stringify(
+          runGitCommand(options.gitWorkTree, options.datetimeCommand)
         ),
       };
     },
