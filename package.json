@@ -1,6 +1,6 @@
 {
   "name": "@jinixx/vite-plugin-git-revision",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Vite plugin that generates VERSION and COMMITHASH files during build based on a local git repository.",
   "type": "module",
   "main": "dist/index.cjs",
