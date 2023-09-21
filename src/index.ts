@@ -23,14 +23,14 @@ export interface ViteGitRevisionPlugin {
   lightweightTags?: boolean;
   // branch name support
   branch?: boolean;
-  //change the default git command used to read the value of COMMITHASH
+  // change the default git command used to read the value of COMMITHASH
   commithashCommand?: string;
+  // change the default git command used to read the value of VERSION
+  versionCommand?: string;
+  // change the default git command used to read the value of BRANCH
+  branchCommand?: string;
   // change the default git command used to read the DATE and TIME of the commit
   datetimeCommand?: string;
-  //change the default git command used to read the value of VERSION
-  versionCommand?: string;
-  //change the default git command used to read the value of BRANCH
-  branchCommand?: string;
 }
 
 export default function GitRevision(options: ViteGitRevisionPlugin): Plugin {
@@ -39,6 +39,7 @@ export default function GitRevision(options: ViteGitRevisionPlugin): Plugin {
   }
 
   options = Object.assign(defaultOpt, options ? options : {});
+
   return {
     name: "vite:git-revision",
     config(config: any) {

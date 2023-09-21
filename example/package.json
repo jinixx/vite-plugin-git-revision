@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vite-plugin-git-revision": "0.1.6",
+    "@jinixx/vite-plugin-git-revision": "0.1.13",
     "vue": "^3.0.5"
   },
   "devDependencies": {
