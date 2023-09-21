@@ -95,7 +95,7 @@ change the default git command used to read the value of BRANCH.
 
 change the default git command used to read the date and time of the commit.
 
-## Acessing the values
+## Accessing the values
 
 ```js
 // Anywhere in your application code
