@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import ViteGitRevision from "@jinixx/vite-plugin-git-revision";
+import ViteGitRevision from "../src/index";
 
 // https://vitejs.dev/config/
 export default defineConfig({

@@ -19,6 +19,7 @@ export function runGitCommand(
     : ["git", command].join(" ");
 
   if (callback) {
+    console.log(gitCommand);
     exec(gitCommand, function (err: any, stdout: any) {
       if (err) {
         return callback(err);
