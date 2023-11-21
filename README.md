@@ -47,7 +47,7 @@ export default {
       // default, remove prop if not needed, do not set to empty
       branchCommand: 'rev-parse --abbrev-ref HEAD',
       // change the default git command used to read the DATE and TIME of the commit
-      datetimeCommand: 'log -1 --date=format:"%Y-%m-%d %H:%M" --pretty=format:'%ad'',
+      datetimeCommand: 'log -1 --date=format:"%Y-%m-%d %H:%M" --pretty=format:"%ad"',
     }),
   ],
 };
@@ -91,7 +91,7 @@ change the default git command used to read the value of BRANCH.
 ### datetimeCommand
 
 - **Type:** `string`
-- **Default:** `log -1 --date=format:"%Y-%m-%d %H:%M" --pretty=format:'%ad'`
+- **Default:** `log -1 --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%ad'`
 
 change the default git command used to read the date and time of the commit.
 
