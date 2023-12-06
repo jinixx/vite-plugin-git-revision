@@ -4,8 +4,7 @@ import { runGitCommand } from "./helpers/run-git-command";
 const COMMITHASH_COMMAND = "rev-parse HEAD";
 const VERSION_COMMAND = "describe --always";
 const BRANCH_COMMAND = "rev-parse --abbrev-ref HEAD";
-const DATETIME_COMMAND =
-  "log -1 --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%ad'";
+const DATETIME_COMMAND = `log -1 --date=format:"%Y-%m-%d %H:%M" --pretty=format:'%ad'`;
 
 const defaultOpt = {
   lightweightTags: false,
